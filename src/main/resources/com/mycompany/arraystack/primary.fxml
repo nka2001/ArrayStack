@@ -1,16 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.arraystack.PrimaryController">
+<AnchorPane prefHeight="430.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.arraystack.PrimaryController">
    <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
+      <Label layoutX="181.0" layoutY="37.0" text="ArrayStack Data Structure" textAlignment="CENTER">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <VBox layoutX="14.0" layoutY="120.0">
+         <children>
+            <RadioButton fx:id="AddRadio" mnemonicParsing="false" onAction="#showAddCommand" text="Add">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Command" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="GetRadio" mnemonicParsing="false" onAction="#showGetCommand" text="Get" toggleGroup="$Command">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="SetRadio" mnemonicParsing="false" onAction="#ShowSetCommand" text="Set" toggleGroup="$Command">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="AllRadio" mnemonicParsing="false" onAction="#ShowAllCommand" text="All" toggleGroup="$Command">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="DeleteRadio" mnemonicParsing="false" onAction="#ShowDeleteCommand" text="Delete" toggleGroup="$Command">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </VBox>
+      <Button fx:id="ExecuteAddButton" layoutX="638.0" layoutY="108.0" mnemonicParsing="false" onAction="#ExecuteAdd" opacity="0.0" prefHeight="51.0" prefWidth="122.0" text="Execute">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="AddPromptLabel" layoutX="156.0" layoutY="116.0" opacity="0.0" text="Enter data to add: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="AddTextField" layoutX="379.0" layoutY="121.0" opacity="0.0" prefHeight="25.0" prefWidth="190.0" />
+      <Label fx:id="getPromptLabel" layoutX="162.0" layoutY="154.0" opacity="0.0" text="Enter data to get: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="GetTextField" layoutX="379.0" layoutY="159.0" opacity="0.0" prefHeight="25.0" prefWidth="190.0" />
+      <Button fx:id="ExecuteGetButton" layoutX="638.0" layoutY="146.0" mnemonicParsing="false" onAction="#ExecuteGet" opacity="0.0" prefHeight="51.0" prefWidth="122.0" text="Execute">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="SetPromptLabel" layoutX="162.0" layoutY="190.0" opacity="0.0" text="Enter Index and new data to set:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="IndexLabel" layoutX="242.0" layoutY="236.0" opacity="0.0" text="Index:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="NewDataLabel" layoutX="433.0" layoutY="236.0" opacity="0.0" text="New Data:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IndexTextField" layoutX="303.0" layoutY="237.0" opacity="0.0" prefHeight="25.0" prefWidth="122.0" />
+      <TextField fx:id="NewDataTextField" layoutX="530.0" layoutY="237.0" opacity="0.0" />
+      <Button fx:id="ExecuteSetButton" layoutX="703.0" layoutY="211.0" mnemonicParsing="false" onAction="#ExecuteSetButton" opacity="0.0" text="Execute">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="ExecuteAllButton" layoutX="548.0" layoutY="217.0" mnemonicParsing="false" onAction="#ExecuteAllCommand" opacity="0.0" text="Execute">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="AllPromptLabel" layoutX="134.0" layoutY="225.0" opacity="0.0" text="Show All Records in the ArrayStack:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="DeletePromptLabel" layoutX="156.0" layoutY="260.0" opacity="0.0" text="Enter an Index to delete:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="ExecuteDeleteButton" layoutX="595.0" layoutY="252.0" mnemonicParsing="false" onAction="#ExecuteDeleteCommand" opacity="0.0" text="Execute">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="DeleteTextField" layoutX="425.0" layoutY="265.0" opacity="0.0" />
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</AnchorPane>
