@@ -59,6 +59,8 @@ public class PrimaryController {
     @FXML
     private Label AllPromptLabel;
 
+    ArrayStackDS a1 = new ArrayStackDS();
+    
     public void initialize() {
 
     }
@@ -92,6 +94,16 @@ public class PrimaryController {
 
     @FXML
     private void ExecuteAdd(ActionEvent event) {
+        
+        String str = AddTextField.getText();
+        int data = Integer.parseInt(str);
+        
+        
+        int index = 0;
+        a1.add(index, data);
+        index++;
+        
+        
 
     }
 
@@ -124,6 +136,13 @@ public class PrimaryController {
 
     @FXML
     private void ExecuteGet(ActionEvent event) {
+        
+        int i = Integer.parseInt(GetTextField.getText());
+        
+        
+        
+        
+        System.out.println(a1.get(i));
 
     }
 
