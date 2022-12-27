@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="430.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.arraystack.PrimaryController">
+<AnchorPane prefHeight="608.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.arraystack.PrimaryController">
    <children>
       <Label layoutX="181.0" layoutY="37.0" text="ArrayStack Data Structure" textAlignment="CENTER">
          <font>
@@ -113,5 +114,6 @@
          </font>
       </Button>
       <TextField fx:id="DeleteTextField" layoutX="425.0" layoutY="265.0" opacity="0.0" />
+      <ListView fx:id="listView" layoutX="37.0" layoutY="374.0" prefHeight="200.0" prefWidth="849.0" />
    </children>
 </AnchorPane>
